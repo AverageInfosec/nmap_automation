@@ -16,7 +16,7 @@ You will be asked:<br/>
 `Enter an IP or subnet: (Example: 192.168.1.0/24 or 192.168.1.1-50. Leave blank to perform a custom scan):`<br/>
 You can enter in CIDR or range. Examples: 192.168.1.0/24 or 192.168.1.1-100<br/>
 
-`Enter Ports to scan: (Example: enter just "-" for all ports, 21,22,80,443 or 1-1000. Leave blank to perform a custom scan):` <br/>
+`Enter Ports to scan: (Example: enter just "-" for all ports, 21,22,80,443 or 1-1000):` <br/>
 You can enter a range or use just "-" to scan all ports. Examples: 1-1000 or -<br/>
 Note that the code has the -p for this field already, do not enter it here.<br/><br/>
 
