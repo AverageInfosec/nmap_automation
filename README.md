@@ -10,10 +10,13 @@ put all required files into a directory of your choice.<br/>
 open CMD and cd to directory containing requried files.<br/>
 run in CMD:   Python nmap_discovery.py<br/>
 
-You will be asked:
-  `Enter an IP or subnet: (Example: 192.168.1.0/24 or 192.168.1.1-50): 192.168.1.0/24`
+You will be asked:<br/>
+`Enter an IP or subnet: (Example: 192.168.1.0/24 or 192.168.1.1-50):`<br/>
+You can enter in CIDR or range. Examples: 192.168.1.0/24 or 192.168.1.1-100<br/>
 
-  `Enter Ports to scan: (Example: enter just "-" for all ports, 21,22,80,443 or 1-1000): 1-1000`
+`Enter Ports to scan: (Example: enter just "-" for all ports, 21,22,80,443 or 1-1000):` <br/>
+You can enter a range or use just "-". Examples: 1-1000 or -<br/>
+Note that the code enteres the -p for this field already, do not enter it here.
 
 
 
