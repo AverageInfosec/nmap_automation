@@ -37,18 +37,13 @@ And then finally you can choose to review the full report in CMD or just save th
 
 
 
-You will get the following files created in the directory of nmap_discovery.py.
+You will get the following files created in the directory of nmap_discovery.py. Delete all 3 files to start fresh.<br/>
     
-scan.csv<br/>
-this is a csv of the scan details. If you run a comprehensive scan make sure you save it somewhere before you run any other scans as it will overwrite this file.
+scan_result.csv<br/>
+this is a csv of the scan details. Multiple scans will append and not overwrite previous scans. This will only show online hosts.<br/>
     
 iplist.csv <br/>
-this is a list of only active IP's. Can be used with other tools as a list to be called. This will continue to append and remove any duplicates based on the scans your perform. delete this file to start fresh.
+this is a list of  active IP's. Can be used with other tools as a list to be called. Multiple scans will append and not overwrite the list.<br/>
     
 outfile.xml <br/>
-this is the main output from nmap. You can also import this to a database.<br/><br/><br/>
-
-You may wish to review the full report after having performed your scans. <br/>
-You can do this by opening powershell and cd to the directory with the required files and run: 
-
-            .\parse-nmap.ps1 outfile.xml
+this is the main output from nmap. You can also import this to a database. This file will be overwritten by each scan.<br/><br/><br/>
