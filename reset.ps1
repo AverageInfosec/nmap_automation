@@ -1,0 +1,1 @@
+﻿Remove-Item * -Include *.xml, *.csv
