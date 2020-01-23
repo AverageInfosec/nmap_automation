@@ -16,12 +16,11 @@ You will be asked:
   Enter Ports to scan: (Example: enter just "-" for all ports, 21,22,80,443 or 1-1000): 1-1000
 
 
-  Please select the type of nmap scan you would like to run
-        1) Comprehensive Scan (-T4 -A -v)
-        2) SYN ACK Scan (-sS -v)
-        3) Scan UDP Ports (-sU -v)
-        4) OS Discovery (-O)
-        5) Custom 
+  >Please select the type of nmap scan you would like to run
+   >     2) SYN ACK Scan (-sS -v)
+    >    3) Scan UDP Ports (-sU -v)
+     >   4) OS Discovery (-O)
+     >   5) Custom 
         
   Would you like to review full report?
       1) Yes 
