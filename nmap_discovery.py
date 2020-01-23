@@ -9,8 +9,8 @@ import shutil
 
 #Ask for user input and assign IP\subnet and port range.
 print('<' + "-"  * 40 + '>')#style options
-ip_range = '192.168.3.132' #str(input('\nEnter an IP or subnet: (Example: 192.168.1.0/24 or 192.168.1.1-50) '))
-user_ports = '1-500' #str(input('\nEnter Ports to scan: (Example: enter just "-" for all ports or 21,22,80,443 '))
+ip_range = str(input('\nEnter an IP or subnet: (Example: 192.168.1.0/24 or 192.168.1.1-50) '))
+user_ports = str(input('\nEnter Ports to scan: (Example: enter just "-" for all ports, 21,22,80,443 or 1-1000)'))
 print("\nScanning IP " + ip_range + ". For ports " + user_ports + ".")
 
 def run_nmap():
@@ -32,10 +32,10 @@ def run_nmap():
 
 while True:
     scanops = input("""Please select the type of nmap scan you would like to run
-        1) Comprehensive Scan
-        2) SYN ACK Scan
-        3) Scan UDP Ports
-        4) OS Discovery
+        1) Comprehensive Scan (-T4 -A -v)
+        2) SYN ACK Scan (-sS -v)
+        3) Scan UDP Ports (-sU -v)
+        4) OS Discovery (-O)
         5) Custom \n""")
     print("You have chosen: ", scanops)
 
