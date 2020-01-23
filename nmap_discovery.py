@@ -75,14 +75,23 @@ os.system('exit' )
 shutil.copyfile('scan.csv', 'ip_temp_list.csv')
 
 
+#make a csv with namp scan details
+with open("scan.csv","r") as source:
+    rdr= csv.reader( source )
+    next(rdr)
+    with open("scan_report.csv","a", newline='') as result:
+        wtr= csv.writer( result )
+        in_iter= ( (r[0],r[1], r[2], r[3], r[4], r[5], r[6], r[7], r[8], r[9],) for r in rdr )
+        wtr.writerows( in_iter )
+
 #remove duplicates from scan.csv
-rows = csv.reader(open('scan.csv', 'r', newline=''))
+rows = csv.reader(open('scan_report.csv', 'r', newline=''))
 newrows = []
 for row in rows:
     if row not in newrows:
         newrows.append(row)
-writer = csv.writer(open('scan.csv', 'w', newline=''))
-writer.writerows(newrows)
+writer = csv.writer(open('scan_report.csv', 'w', newline=''))
+writer.writerows(newrows)       
 
 
 #make a csv with just IP's
@@ -90,14 +99,14 @@ with open("ip_temp_list.csv","r") as source:
     rdr= csv.reader( source )
     next(rdr)
     next(rdr)
-    with open("iplist.csv","w", newline='') as result:
+    with open("iplist.csv","a", newline='') as result:
         wtr= csv.writer( result )
         in_iter= ( (r[3],) for r in rdr )
         wtr.writerows( in_iter )
 
-#remove temp csv file
+#remove temp csv files
 os.remove("ip_temp_list.csv")
-#os.remove("outfile.xml")
+os.remove("scan.csv")
 
 
 #remove duplicates from iplist.csv
