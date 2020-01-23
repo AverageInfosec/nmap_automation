@@ -1,0 +1,1 @@
+.\parse-nmap.ps1 outfile.xml -outputdelimiter " " | where {$_.Status -match "up"} | export-csv scan.csv
