@@ -43,7 +43,7 @@ scan.csv<br/>
 this is a csv of the scan details. If you run a comprehensive scan make sure you save it somewhere before you run any other scans as it will overwrite this file.
     
 iplist.csv <br/>
-this is a list of only active IP's. Can be used with other tools as a list to be called. 
+this is a list of only active IP's. Can be used with other tools as a list to be called. This will continue to append and remove any duplicates based on the scans your perform. delete this file to start fresh.
     
 outfile.xml <br/>
 this is the main output from nmap. You can also import this to a database.<br/><br/><br/>
