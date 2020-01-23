@@ -1,7 +1,6 @@
 #!c:/Python/python.exe
 import sys
 import os
-import nmap
 from datetime import datetime
 import time
 import csv
@@ -31,31 +30,40 @@ def run_nmap():
     print("Time elapsed: " + str(delta))
     print('<' + "-"  * 40 + '>')#style options
 
-scanops = input("""Please select the type of nmap scan you would like to run
-    1) Comprehensive Scan
-    2) SYN ACK Scan
-    3) Scan UDP Ports
-    4) OS Discovery
-    5) Custom \n""")
-print("You have chosen: ", scanops)
-if scanops == '1':
-        nmap_arguments = '-T4 -A -v'
-        run_nmap()
-        print(nmap_arguments)
-elif scanops == '2':
-        nmap_arguments = '-sS -v'
-        run_nmap()
-elif scanops == '3':
-        nmap_arguments = '-sU -v'
-        run_nmap()
-elif scanops == '4':
-        nmap_arguments = '-O'
-        run_nmap()
-elif scanops == '5':
-        nmap_arguments = str(input('\nEnter nmap options: '))
-        run_nmap()
-elif scanops >='6':
-        print("Please enter a valid option")
+while True:
+    scanops = input("""Please select the type of nmap scan you would like to run
+        1) Comprehensive Scan
+        2) SYN ACK Scan
+        3) Scan UDP Ports
+        4) OS Discovery
+        5) Custom \n""")
+    print("You have chosen: ", scanops)
+
+    if scanops == '1':
+            nmap_arguments = '-T4 -A -v'
+            run_nmap()
+            print(nmap_arguments)
+            break
+    elif scanops == '2':
+            nmap_arguments = '-sS -v'
+            run_nmap()
+            break
+    elif scanops == '3':
+            nmap_arguments = '-sU -v'
+            run_nmap()
+            break
+    elif scanops == '4':
+            nmap_arguments = '-O'
+            run_nmap()
+            break
+    elif scanops == '5':
+            nmap_arguments = str(input('\nEnter nmap options: '))
+            run_nmap()
+            break
+    else:
+            print("Please enter a valid option")
+
+    
 
 #Make a copy of scan csv to create an IP list
 shutil.copyfile('scan.csv', 'ip_temp_list.csv')
@@ -94,6 +102,18 @@ for row in rows:
 writer = csv.writer(open('iplist.csv', 'w', newline=''))
 writer.writerows(newrows)
 
+while True:
+    review_report = input('''Would you like to review full report?
+    1) Yes
+    2) No
+    ''')
 
-
-
+    if review_report == '1':
+        os.system("powershell -NoProfile -ExecutionPolicy ByPass .\\parse-nmap.ps1 outfile.xml ")
+        os.system('exit' )
+        break
+    elif review_report == '2':
+        print('Selected No')
+        break
+    else:
+        print("Please enter a valid option")
