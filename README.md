@@ -10,7 +10,7 @@ put all required files into a directory of your choice.<br/>
 open CMD and cd to directory containing requried files.<br/>
 run in CMD: 
 
-        Python nmap_discovery.py<br/>
+        Python nmap_discovery.py
 
 You will be asked:<br/>
 `Enter an IP or subnet: (Example: 192.168.1.0/24 or 192.168.1.1-50):`<br/>
