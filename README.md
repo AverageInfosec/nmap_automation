@@ -1,7 +1,7 @@
 # nmap_automation
 required files:<br/>
 nmap_discovery.py<br/>
-nmap_to_csv.py<br/>
+xml_to_csv.ps1<br/>
 parse-nmap.ps1<br/>
 
 Install python3 to c:\python3 (to c:\ to avoid issues with potential spaces in directories.)<br/>
@@ -17,8 +17,8 @@ You will be asked:<br/>
 You can enter in CIDR or range. Examples: 192.168.1.0/24 or 192.168.1.1-100<br/>
 
 `Enter Ports to scan: (Example: enter just "-" for all ports, 21,22,80,443 or 1-1000):` <br/>
-You can enter a range or use just "-". Examples: 1-1000 or -<br/>
-Note that the code enteres the -p for this field already, do not enter it here.<br/><br/>
+You can enter a range or use just "-" to scan all ports. Examples: 1-1000 or -<br/>
+Note that the code has the -p for this field already, do not enter it here.<br/><br/>
 
 Next you will be asked: <br/>
 
@@ -40,10 +40,10 @@ And then finally you can choose to review the full report in CMD or just save th
 You will get the following files created in the directory of nmap_discovery.py.
     
 scan.csv<br/>
-this is a basic csv of the scan details. It only shows the top OS guess, to get all OS guesses run the full report.
+this is a csv of the scan details. If you run a comprehensive scan make sure you save it somewhere before you run any other scans as it will overwrite this file.
     
 iplist.csv <br/>
-this is a list of only active IP's. Can be used with other tools as a list.
+this is a list of only active IP's. Can be used with other tools as a list to be called. 
     
 outfile.xml <br/>
 this is the main output from nmap. You can also import this to a database.<br/><br/><br/>
