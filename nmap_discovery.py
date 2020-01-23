@@ -10,17 +10,16 @@ import shutil
 
 #style options
 print('<' + "-"  * 40 + '>')
-#Ask for user input and assign IP\subnet and port range.
+#Ask for user input and assign IP\subnet.
 ip_range = str(input('\nEnter an IP or subnet: (Example: 192.168.1.0/24 or 192.168.1.1-50. Leave blank to perform a custom scan): '))
-user_ports = str(input('\nEnter Ports to scan: (Example: enter just "-" for all ports, 21,22,80,443 or 1-1000): '))
-print("\nScanning IP " + ip_range + ". For ports " + user_ports + ".")
+
 
 #Function to perform an nmap scan
 def run_nmap():
     #time stamp for calculating time elapsed
     before = datetime.now()
     #nmap scan config
-    nmap_scan = ("nmap " + ip_range + " -p" + user_ports + " " + nmap_arguments + " -oX outfile.xml")
+    nmap_scan = ("nmap " + ip_range + " " + user_ports + " " + nmap_arguments + " -oX outfile.xml")
     os.system( nmap_scan )
     os.system('exit' )
     #Finished time
@@ -46,22 +45,27 @@ while True:
 
     if scanops == '1':
             nmap_arguments = '-T4 -A -v'
+            user_ports = str(" ")
             run_nmap()
             print(nmap_arguments)
             break
     elif scanops == '2':
             nmap_arguments = '-sS -v'
+            user_ports = str(" ")
             run_nmap()
             break
     elif scanops == '3':
             nmap_arguments = '-sU -v'
+            user_ports = str(" -p" +input('\nEnter Ports to scan: (Example: enter just "-" for all ports, 21,22,80,443 or 1-1000): '))
             run_nmap()
             break
     elif scanops == '4':
             nmap_arguments = '-O'
+            user_ports = str(" ")
             run_nmap()
             break
     elif scanops == '5':
+            user_ports = str(" -p" +input('\nEnter Ports to scan: (Example: enter just "-" for all ports, 21,22,80,443 or 1-1000): '))
             nmap_arguments = str(input('\nEnter nmap options: '))
             run_nmap()
             break
