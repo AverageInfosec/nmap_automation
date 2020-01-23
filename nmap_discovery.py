@@ -7,29 +7,34 @@ import csv
 import shutil
 
 
+
+#style options
+print('<' + "-"  * 40 + '>')
 #Ask for user input and assign IP\subnet and port range.
-print('<' + "-"  * 40 + '>')#style options
-ip_range = '192.168.3.132' #str(input('\nEnter an IP or subnet: (Example: 192.168.1.0/24 or 192.168.1.1-50) '))
-user_ports = '1-500' #str(input('\nEnter Ports to scan: (Example: enter just "-" for all ports, 21,22,80,443 or 1-1000)'))
+ip_range = str(input('\nEnter an IP or subnet: (Example: 192.168.1.0/24 or 192.168.1.1-50) '))
+user_ports = str(input('\nEnter Ports to scan: (Example: enter just "-" for all ports, 21,22,80,443 or 1-1000)'))
 print("\nScanning IP " + ip_range + ". For ports " + user_ports + ".")
 
+#Function to perform an nmap scan
 def run_nmap():
-    #add banner containing time stamps for calculating time elapsed
+    #time stamp for calculating time elapsed
     before = datetime.now()
     #nmap scan config
     nmap_scan = ("nmap " + ip_range + " -p" + user_ports + " " + nmap_arguments + " -oX outfile.xml")
-    #convert xml to csv
     os.system( nmap_scan )
     os.system('exit' )
     #Finished time
     after = datetime.now()
     print("Time finished: "+ str(datetime.now().strftime('%m-%d-%Y %H:%M:%S')))
-    print('<' + "-"  * 40 + '>')#style options
+    #style options
+    print('<' + "-"  * 40 + '>')
     #time elapsed during scan
     delta =  after-before
     print("Time elapsed: " + str(delta))
-    print('<' + "-"  * 40 + '>')#style options
+    #style options
+    print('<' + "-"  * 40 + '>')
 
+#ask the user what type of nmap scan they wish to perform, and adds arugments to do the specific types
 while True:
     scanops = input("""Please select the type of nmap scan you would like to run
         1) Comprehensive Scan (-T4 -A -v)
@@ -62,11 +67,11 @@ while True:
             break
     else:
             print("Please enter a valid option")
-
+#Create a CSV from the XML nmap created
 os.system("powershell -NoProfile -ExecutionPolicy ByPass .\\xml_to_csv.ps1")
 os.system('exit' )
 
-#Make a copy of scan csv to create an IP list
+#Make a copy of scan csv to create an IPlist
 shutil.copyfile('scan.csv', 'ip_temp_list.csv')
 
 
@@ -103,7 +108,8 @@ for row in rows:
         newrows.append(row)
 writer = csv.writer(open('iplist.csv', 'w', newline=''))
 writer.writerows(newrows)
-    
+
+#Ask user if they wish to view full report in the CMD window
 while True:
     review_report = input('''Would you like to review full report?
     1) Yes
