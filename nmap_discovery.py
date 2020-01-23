@@ -12,7 +12,7 @@ import shutil
 print('<' + "-"  * 40 + '>')
 #Ask for user input and assign IP\subnet and port range.
 ip_range = str(input('\nEnter an IP or subnet: (Example: 192.168.1.0/24 or 192.168.1.1-50. Leave blank to perform a custom scan): '))
-user_ports = str(input('\nEnter Ports to scan: (Example: enter just "-" for all ports, 21,22,80,443 or 1-1000. Leave blank to perform a custom scan): '))
+user_ports = str(input('\nEnter Ports to scan: (Example: enter just "-" for all ports, 21,22,80,443 or 1-1000): '))
 print("\nScanning IP " + ip_range + ". For ports " + user_ports + ".")
 
 #Function to perform an nmap scan
