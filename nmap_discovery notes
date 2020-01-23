@@ -1,10 +1,4 @@
-Get-ChildItem env: | out-string -Stream | select-string -pattern "Python" 
-
-pip install python-nmap #needed to use python script with nmap
-
-python -i nmap_discovery.py #doesnt use python3 in windows.
-if fails do ctrl+z and hit enter, this is the same as ctrl+c in regular cmd.
-
+resources used to help build this script
 
 https://github.com/laconicwolf/Nmap-Scan-to-CSV/blob/master/nmap_xml_parser.py to convert xml to csv
 
@@ -16,19 +10,3 @@ https://stackoverflow.com/questions/7588934/how-to-delete-columns-in-a-csv-file
 
 https://stackoverflow.com/questions/29883453/wrap-code-in-a-function
 
-Comment out the end if statement
-  # Get information on ports and services
-        try:
-            port_element = host.findall('ports')
-            ports = port_element[0].findall('port')
-            for port in ports:
-                port_data = []
-
-                if args.udp_open:
-                    # Display both open ports and open}filtered ports
-                    if not 'open' in port.findall('state')[0].attrib['state']:
-                        continue
-                #else:
-                    # Ignore ports that are not 'open'
-                    #if not port.findall('state')[0].attrib['state'] == 'open' :
-                     #   continue
