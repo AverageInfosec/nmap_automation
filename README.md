@@ -26,7 +26,7 @@ Next you will be asked: <br/>
           3) Scan UDP Ports (-sU -v)
           4) OS Discovery (-O)
           5) Custom 
-And then finally you can choose to review the full report or just save the output to your directory. <br/>
+And then finally you can choose to review the full report in CMD or just save the output to your directory. <br/>
       
       Would you like to review full report?
         1) Yes 
@@ -43,5 +43,9 @@ iplist.csv <br/>
 this is a list of only active IP's. Can be used with other tools as a list.
     
 outfile.xml <br/>
-this is the main output from nmap. This can be used with ".\parse-nmap.ps1 outfile.xml" to read just the full report without rerunning the script. You can also import this to a database.
-    
+this is the main output from nmap. You can also import this to a database.<br/><br/><br/>
+
+You may wish to review the full report after having performed your scans. <br/>
+You can do this by opening powershell and cd to the directory with the required files and run: 
+
+            .\parse-nmap.ps1 outfile.xml
