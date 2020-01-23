@@ -8,7 +8,9 @@ Install python3 to c:\python3 (to c:\ to avoid issues with potential spaces in d
 Download required files.<br/>
 put all required files into a directory of your choice.<br/>
 open CMD and cd to directory containing requried files.<br/>
-run in CMD:   Python nmap_discovery.py<br/>
+run in CMD: 
+
+        Python nmap_discovery.py<br/>
 
 You will be asked:<br/>
 `Enter an IP or subnet: (Example: 192.168.1.0/24 or 192.168.1.1-50):`<br/>
