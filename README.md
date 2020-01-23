@@ -47,3 +47,8 @@ this is a list of  active IP's. Can be used with other tools as a list to be cal
     
 outfile.xml <br/>
 this is the main output from nmap. You can also import this to a database. This file will be overwritten by each scan.<br/><br/><br/>
+
+You can use the reset.ps1 file to quickly remove all .csv and .xml files and start from a fresh state. <br/>
+In CMD from the directory containing the required files run:
+        `powershell .\reset.ps1`
+
