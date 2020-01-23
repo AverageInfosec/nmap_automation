@@ -1,10 +1,11 @@
-# nmap_automation
+# nmap_automation for windows
 Required files:<br/>
 nmap_discovery.py<br/>
 xml_to_csv.ps1<br/>
 parse-nmap.ps1<br/>
 
 Install python3 to c:\python3 (to c:\ to avoid issues with potential spaces in directories.)<br/>
+Install nmap. <br/>
 Download required files.<br/>
 Put all required files into a directory of your choice.<br/>
 Open CMD and cd to directory containing requried files.<br/>
