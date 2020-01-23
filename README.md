@@ -24,6 +24,7 @@ Next you will be asked: <br/>
 
 
     Please select the type of nmap scan you would like to run
+          1) Comprehensive Scan (-T4 -A -v)
           2) SYN ACK Scan (-sS -v)
           3) Scan UDP Ports (-sU -v)
           4) OS Discovery (-O)
