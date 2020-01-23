@@ -49,6 +49,6 @@ outfile.xml <br/>
 this is the main output from nmap. You can also import this to a database. This file will be overwritten by each scan.<br/><br/><br/>
 
 You can use the reset.ps1 file to quickly remove all .csv and .xml files and start from a fresh state. <br/>
-In CMD from the directory containing the required files run:
+In CMD from the directory containing the required files run:<br/>
         `powershell .\reset.ps1`
 
