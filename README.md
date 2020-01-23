@@ -16,8 +16,9 @@ You can enter in CIDR or range. Examples: 192.168.1.0/24 or 192.168.1.1-100<br/>
 
 `Enter Ports to scan: (Example: enter just "-" for all ports, 21,22,80,443 or 1-1000):` <br/>
 You can enter a range or use just "-". Examples: 1-1000 or -<br/>
-Note that the code enteres the -p for this field already, do not enter it here.
+Note that the code enteres the -p for this field already, do not enter it here.<br/><br/>
 
+Next you will be asked: <br/>
 
 
     Please select the type of nmap scan you would like to run
@@ -25,8 +26,9 @@ Note that the code enteres the -p for this field already, do not enter it here.
           3) Scan UDP Ports (-sU -v)
           4) OS Discovery (-O)
           5) Custom 
-
-    Would you like to review full report?
+And then finally you can choose to review the full report or just save the output to your directory. <br/>
+      
+      Would you like to review full report?
         1) Yes 
         2) No
 
